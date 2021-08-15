@@ -71,7 +71,7 @@ class FilterRequestDataController extends Controller
                 return $likeFields['errors'];
             }
 
-            $model = $model->orWhereLike($likeFields['field'], $dataLike[1]);
+            $model = $model->whereLike($likeFields['field'], $dataLike[1]);
         }
 
         //check orlike
