@@ -40,5 +40,28 @@ ex : orwherelike=last_name=at
 ```php
    $model = $model->whereLike($likeFields['field'], $dataSearch);
 ```
-
+### with
+ex : with=role,promotion
+> le with va permetre de vérifier les relations existant avec la table et les retournées. le with s'ecrit 1,1,1 :  le 1 est le nom de la method de la classe qui permet de retourné les informations de la relation, la "," est le séparateur des différentes relations.
+```php
+  $model = $model->with($withs['field']);
+```
+### first
+ex : first=1
+> le first va permetre d'arreter la function et de retourné le premier élément de la recherche. Deux chois possible 0 ou 1 : le 0 signifie false et le 1 true.
+```php
+  return $model->first();
+```
+### orderby
+ex : orderby=first_name,asc
+> le orderby va permettre de ranger le résultat en fonction d'un champs et d'un ordre. le orderby s'ecrit 1,2 : le 1 désigne le champ qui sera trié et le 2 designe le type de rangement "asc" ou "desc", par défaut le triage est asc
+```php
+  $model = $model->orderBy($orderByField['field'][0], $order);
+```
+### paginate
+ex : paginate=2
+> le paginate va permettre de retourner le resultat paginé. le paginate prend un seul parametre qui est un integer du nombre d'entité par page.
+```php
+  return $model->paginate($nbreEntité);
+```
 
