@@ -33,3 +33,12 @@ ex : orwhere=id,=,3
 ```php
     $model = $model->where($whereFields['field']);
 ```
+### like ou orlike
+ex : wherelike=last_name,first_name=bea
+ex : orwherelike=last_name=at
+> le wherelike ou le orwherelike va appliquer une recherche sur des champs pour savoir s'il contienne une partie ou la totalité de la valeur. la recherche s'ecrit : 1,1,1=2 . la partie 1 designe la liste des champs pour la recherche, le = est juste un séparateur, et la  partie 2 designe la valeur recherchée.
+```php
+   $model = $model->whereLike($likeFields['field'], $dataSearch);
+```
+
+
