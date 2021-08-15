@@ -1,5 +1,5 @@
 # Function filter Data en get()
-> Cette function permet d'utiliser une route en get pour créer une requête sur la BDD via le model et return le resultat de la recherche s'il exist. Cette fonction est utiliser dans laravel 8.La function vérifie les parametre présent la requete pour savoir quoi faire.
+> Cette function permet d'utiliser une route en get pour créer une requête sur la BDD via le model et return le resultat de la recherche s'il exist. Cette fonction est utiliser dans laravel 8.La function vérifie les parametre présent dans la requete pour savoir quoi faire.
 
 ## Une route get() dans laravel 
 ```php
@@ -26,4 +26,10 @@ ex : select=id,last_name,first_name
         $model = $model::select("*");
     }
 ```
-### where
+### where ou orwhere
+ex : where=id,=,1;last_name,=,test
+ex : orwhere=id,=,3
+> le where ou le orwhere va appliquer une condition pour filtrer l'affichage, on peut poser plusieur condition dans le where pour séparer une condition d'une autre nous allons utiliser ";" la condition s'écrit : 1,=,2 . le 1 est le champ de la table à filtrer, le = design le type de filtre (=,>,<,>=,<=), et le 2 est la valeur recherchée. les virgules "," sépare les parties. le where ou orwhere applique le filtre sur le model.
+```php
+    $model = $model->where($whereFields['field']);
+```
