@@ -18,7 +18,7 @@ ex : model=user
 
 ### select
 ex : select=id,last_name,first_name
-> le select selectionne les champs à afficher dans le resultat, les champs sont traités dans un [], si le champs n'existe pas la function s'arrete et return une erreur
+> le select selectionne les champs à afficher dans le resultat, les champs sont traités dans un [], si le champs n'existe pas la function s'arrete et return une erreur. le select s'ecrit 1,1,1, le 1 designe le champs et la "," sert de séparation.
 ```php
     if ($request->select) {
         $model = $model::select($selectFields['field']);
